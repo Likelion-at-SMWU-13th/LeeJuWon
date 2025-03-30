@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>🦁 마이페이지</title>
+  <link rel="stylesheet" href="mypage.css" />
+</head>
+<body>
+  <header>
+    <h1 class="page-title">🦁 My Page</h1>
+    <a href="main.html">
+      <img id="logo_sookmutsa" src="./images/숙멋사로고명.svg" />
+    </a>
+  </header>
+
+  <main>
+    <section class="profile-box">
+      <div class="profile-left">
+        <img class="profile_img" src="./images/profile.jpg" alt="프로필 사진" />
+        <p class="username">@uomooz__</p>
+      </div>
+      <div class="profile-right">
+        <div class="info-box">
+            <h3>🙋🏻‍♀️ 기본 정보</h3>
+            <div class="info-grid clean">
+              <div class="info-pair">
+                <label>이름</label>
+                <div class="info-value">이주원</div>
+              </div>
+              <div class="info-pair">
+                <label>나이</label>
+                <div class="info-value">24</div>
+              </div>
+              <div class="info-pair">
+                <label>MBTI</label>
+                <div class="info-value">ISTJ</div>
+              </div>
+              <div class="info-pair">
+                <label>학과</label>
+                <div class="info-value">인공지능공학부</div>
+              </div>
+              <div class="info-pair">
+                <label>파트</label>
+                <div class="info-value">백엔드</div>
+              </div>
+              <div class="info-pair">
+                <label>기수</label>
+                <div class="info-value">13기</div>
+              </div>
+            </div>
+          </div>
+          
+        
+        <div class="info-box">
+          <h3>💬 자기소개</h3>
+          <p>안녕하세요! 꼼꼼하고 책임감 있게 맡은 일을 끝까지 해내는 이주원입니다.<br />
+            멋사 백엔드 파트에서 열심히 성장 중이며, AI와 서비스 기획에도 관심이 많아요 :)</p>
+        </div>
+  
+        <div class="info-box">
+          <h3>🎯 올해 목표</h3>
+          <p>멋사 활동을 통해 실무 감각을 키우고, 나만의 프로젝트를 하나 완성해보는 것이 목표입니다!</p>
+        </div>
+      </div>
+    </section>
+  
+    <section class="bottom-section">
+        <div class="photo-side">
+          <h3>📸 나를 나타내는 사진들</h3>
+          <div class="photo-grid">
+            <div class="photo-card">
+              <img src="./images/me1.jpg" alt="죠지" />
+              <p class="caption">요즘에 좋아하는 가수, 죠지❤️</p>
+            </div>
+            <div class="photo-card">
+              <img src="./images/me2.jpg" alt="꽃" />
+              <p class="caption">저는 꽃을 참 좋아해요🌼</p>
+            </div>
+            <div class="photo-card">
+              <img src="./images/me3.jpg" alt="반려동물들" />
+              <p class="caption">사랑하는 반려동물들🐻</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="oneliner-side">
+          <h3>📝 오늘의 한마디</h3>
+          <textarea id="onelinerInput" placeholder="한마디 적기"></textarea>
+          <button class="oneliner-btn" onclick="saveOneliner()">저장</button>
+          <p id="onelinerDate" class="oneliner-date"></p>
+          <p id="onelinerText" class="oneliner-text"></p>
+        </div>
+      </section>
+      
+  
+  <script src="mypage.js"></script>
+  
+  
+  
+  
+</body>
+</html>
