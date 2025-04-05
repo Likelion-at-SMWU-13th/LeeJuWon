@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>🦁 메인페이지</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo-left">
+          <a href="main.html">
+            <img id="logo_sookmutsa" src="./images/숙멋사로고명.svg" alt="숙멋사 로고" />
+          </a>
+        </div>
+        <div class="nav-right">
+          <a href="mypage.html">
+            <img id="mypage" src="./images/mypage.svg" alt="마이페이지" />
+          </a>
+          <a href="login.html">
+            <button id="logout">로그아웃</button>
+          </a>
+        </div>
+      </div>
+    </header>
+    
+    
+
+    <article>
+      <h1>로그인에 성공했습니다.</h1>
+      <p>이주원님, 환영합니다!</p>
+    </article>
+    <section class="sook-links">
+      <h3>숙멋사 관련 링크</h3>
+      <ul>
+        <li><a href="https://github.com/Likelion-at-SMWU-13th" target="_blank">🔗 GitHub</a></li>
+        <li><a href="https://www.notion.so/Likelion-at-SMWU-13th-16d696b3a71380b9b9f4f084e0941f4b" target="_blank">🔗 Notion</a></li>
+        <li><a href="https://likelion.net/" target="_blank">🔗 공식 홈페이지</a></li>
+      </ul>
+    </section>
+    
+
+    <section class="lion-vote-section">
+      <h3 class="vote-title">🦁 사용자들이 만들어본 숙멋사 캐릭터! 뭐가 제일 귀여운가요?</h3>
+      <div class="lion-vote">
+        <div class="lion-option">
+          <img src="./images/lion1.png" alt="사자1" />
+          <button data-id="lion1">🐾 투표하기</button>
+        </div>
+        <div class="lion-option">
+          <img src="./images/lion2.png" alt="사자2" />
+          <button data-id="lion2">🐾 투표하기</button>
+        </div>
+        <div class="lion-option">
+          <img src="./images/liion3.png" alt="사자3" />
+          <button data-id="lion3">🐾 투표하기</button>
+        </div>
+      </div>
+      <p id="vote-result" style="display:none; color:#97afe3; margin-top:10px;">투표 감사합니다! 🧡</p>
+    </section>
+
+    <script src="main.js"></script>
+  </body>
+</html>
