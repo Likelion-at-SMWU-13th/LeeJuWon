@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>🦁 메인페이지</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo-left">
+          <a href="main.html">
+            <img id="logo_sookmutsa" src="{% static 'images/숙멋사로고명.svg' %}"/>
+          </a>
+        </div>
+        <div class="nav-right">
+          <a href="mypage.html">
+            <img id="mypage" src="{% static 'images/mypage.svg' %}"/>
+          </a>
+          <a href="{% url 'logout' %}">
+            <img id="logout" src="{% static 'images/logout.svg' %}"/>
+          </a>
+        </div>
+      </div>
+    </header>
+    
+    
+
+    <article>
+      {% if user.is_authenticated %}
+        <h1>로그인에 성공했습니다.</h1>
+        <p>{{user.first_name}}님, 환영합니다!</p>
+      {% else %}
+        <p>로그인을 해주세요</p>
+      {% endif %}
+    </article>
+    <section class="sook-links">
+      <h3>숙멋사 관련 링크</h3>
+      <ul>
+        <li><a href="https://github.com/Likelion-at-SMWU-13th" target="_blank">🔗 GitHub</a></li>
+        <li><a href="https://www.notion.so/Likelion-at-SMWU-13th-16d696b3a71380b9b9f4f084e0941f4b" target="_blank">🔗 Notion</a></li>
+        <li><a href="https://likelion.net/" target="_blank">🔗 공식 홈페이지</a></li>
+      </ul>
+    </section>
+  
+    <script src="main.js"></script>
+  </body>
+</html>
