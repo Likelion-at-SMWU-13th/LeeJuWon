@@ -61,16 +61,13 @@ article p {
 }
 
 #logout {
-  padding: 8px 16px;
-  border-radius: 8px;
-  background-color: #97afe3;
-  color: #fff;
-  font-weight: 700;
-  font-size: 14px;
+  width: 30px;
+  height: 30px;
+  padding: 0; 
+  background-color: transparent; 
   border: none;
-  cursor: pointer;
-  white-space: nowrap;
 }
+
 
 
 
@@ -78,63 +75,17 @@ article {
   margin-top: 50px;
 }
 
-.vote-title {
-  font-weight: bold;
-  font-size: 20px;
-  color: #97afe3;
-  margin-top: 60px;
-  margin-bottom: 10px;
-  font-family: "YiSunShinDotumM";
-  padding-left: 10px;
-}
+
 #logo_sookmutsa {
   padding-left: 10px;
   width: 145px;
 }
 
 
-.lion-vote {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
 
-.lion-option {
-  background-color: #2a2a2a;
-  padding: 15px;
-  border-radius: 15px;
-  text-align: center;
-  width: 30%;
-}
 
-.lion-option img {
-  width: 80%;
-  max-height: 180px;
-  object-fit: contain;
-  margin-bottom: 10px;
-}
 
-.lion-option button {
-  background-color: #97afe3;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-weight: bold;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
 
-.lion-option button:hover {
-  background-color: #6d8fcf;
-}
-
-#vote-result {
-  font-size: 16px;
-  font-weight: 600;
-  margin-top: 10px;
-  color: #97afe3;
-}
 
 .sook-links {
   margin-top: 60px;
