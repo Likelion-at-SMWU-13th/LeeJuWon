@@ -6,7 +6,7 @@ def introduceView(request):
     return render(request, 'introduce.html', {
         'name': '이주원',
         'age': 24,
-        'mbti' : 'ISTJ'
+        'mbti' : 'ISTJ',
         'university': '숙명여자대학교',
         'major': '인공지능공학부',
         'hobby': '산책하기, 영화보기, 노래듣기',
