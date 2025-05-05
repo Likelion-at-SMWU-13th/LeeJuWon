@@ -1,0 +1,18 @@
+<h1>자기소개</h1>
+
+<form method="POST">
+  {% csrf_token %}
+  <label>이름: <input type="text" name="name"></label><br>
+  <label>나이: <input type="number" name="age"></label><br>
+  <label>MBTI: <input type="text" name="mbti"></label><br>
+  <button type="submit">제출</button>
+</form>
+
+{% if submitted %}
+  <h2>입력한 정보</h2>
+  <ul>
+    <li>이름: {{ name }}</li>
+    <li>나이: {{ age }}</li>
+    <li>MBTI: {{ mbti }}</li>
+  </ul>
+{% endif %}
