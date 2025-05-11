@@ -11,4 +11,5 @@ urlpatterns = [
     path('<int:id>/', post_detail_view),
     path('<int:id>/edit', post_update_view),
     path('<int:id>/delete', post_delete_view),
+    path('form/', post_form_view, name="post-form"),
 ]
