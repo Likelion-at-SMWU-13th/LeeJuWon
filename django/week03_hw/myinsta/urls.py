@@ -30,6 +30,7 @@ urlpatterns = [
 
     path('', index, name='index'),
     path('posts/', include('posts.urls', namespace='posts')),
+    path('accounts/', include('accounts.urls', namespace='accounts')),
 ]
 
 # 개발 환경에서 media 파일 서빙
