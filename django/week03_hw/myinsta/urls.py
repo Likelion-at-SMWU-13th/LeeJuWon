@@ -17,7 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from posts.views import url_view, url_parameter_view, function_view, class_view
-from posts.views import index #방금 만든 인덱스 임포트해서 넣어주고 #posts>urls.py의 url을 posts/뒤에 붙이도록 만듦
+from posts.views import index
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,3 +31,7 @@ urlpatterns = [
     path('', index, name='index'),
     path('posts/', include('posts.urls', namespace='posts')),
 ]
+
+# 개발 환경에서 media 파일 서빙
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

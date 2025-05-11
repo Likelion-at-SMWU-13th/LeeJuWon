@@ -11,10 +11,21 @@ from. forms import PostBasedForm, PostModelForm
 def post_form_view(request):
     if request.method == "GET":
         form = PostBasedForm()
-        context = {'form' : form}
+        context = {'form': form}
         return render(request, 'posts/post_form2.html', context)
-    else:
-        return redirect('index')
+    
+    elif request.method == "POST":
+        form = PostBasedForm(request.POST, request.FILES)
+        if form.is_valid():
+            # 모델 인스턴스 생성 및 저장
+            Post.objects.create(
+                image=form.cleaned_data['image'],
+                content=form.cleaned_data['content']
+            )
+            return redirect('posts:post-list')
+        else:
+            return render(request, 'posts/post_form2.html', {'form': form})
+
     
 def post_create_form_view(request):
     if request.method == "GET":
