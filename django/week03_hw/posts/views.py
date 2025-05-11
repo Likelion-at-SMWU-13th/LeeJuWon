@@ -63,12 +63,32 @@ def post_detail_view(request, id):
 def post_create_view(request):
     return render(request, 'posts/post_form.html')
 
+#기존에 작성해둔 post_update_view를 수정
 def post_update_view(request, id):
-    return render(request, 'posts/post_update.html')
+    post = Post.objects.get(id=id)
+    if request.method == "GET":
+        form = PostModelForm(instance=post)
+        context = {'form': form, 'post': post}
+        return render(request, 'posts/post_update.html', context)
+
+    else:  
+        form = PostModelForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('posts:post-detail', id=id) 
+        else:
+            print(form.errors)
+            return render(request, 'posts/post_update.html', {'form': form})
 
 def post_delete_view(request, id):
-    return render(request, 'posts/post_confirm_delete.html')
+    post = get_object_or_404(Post, id=id)
+    
+    if request.method == "POST":
+        post.delete()
+        return redirect('index')  # 삭제 후 홈 화면으로 리다이렉트
 
+    context = {'post': post}
+    return render(request, 'posts/post_confirm_delete.html', context)
 class class_view(ListView):
     model = Post
     template_name='cbv_view.html'
