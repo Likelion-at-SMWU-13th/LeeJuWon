@@ -3,7 +3,7 @@ from django.http import HttpResponse, JsonResponse
 
 from django.views.generic import ListView
 from .models import Post
-from. forms import PostBasedForm
+from. forms import PostBasedForm, PostModelForm
 
 # Create your views here.
 
@@ -15,15 +15,39 @@ def post_form_view(request):
         return render(request, 'posts/post_form2.html', context)
     else:
         return redirect('index')
+    
+def post_create_form_view(request):
+    if request.method == "GET":
+        form = PostModelForm()
+        context = {'form' : form}
+        return render(request, 'posts/post_form2.html', context)
+    
+    else : 
+        form = PostModelForm(request.POST,request.FILES)
 
+        if form.is_valid():
+            Post.objects.create(
+                image = form.cleaned_data['image'],
+                content = form.cleaned_data['content'],
+                writer = request.user
+            )
+        else:
+            print(form.errors)
+            return redirect('posts:post-new')
+        return redirect('index')
+        
+#2주차 세미나
 def index(request):
     return render(request, 'index.html')
 
 def post_list_view(request):
     return render(request, 'posts/post_list.html')
 
+#기존에 작성해둔 post_detail_view를 수정
 def post_detail_view(request, id):
-    return render(request, 'posts/post_detail.html')
+    post = Post.objects.get(id=id)
+    context = {'post': post}
+    return render(request, 'posts/post_detail.html', context)
 
 def post_create_view(request):
     return render(request, 'posts/post_form.html')
