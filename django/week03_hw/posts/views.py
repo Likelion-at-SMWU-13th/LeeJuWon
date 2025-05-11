@@ -3,7 +3,7 @@ from django.http import HttpResponse, JsonResponse
 
 from django.views.generic import ListView
 from .models import Post
-from. forms import PostBasedForm, PostModelForm
+from. forms import PostBasedForm
 
 # Create your views here.
 
