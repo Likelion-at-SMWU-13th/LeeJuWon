@@ -19,3 +19,21 @@ def signup_view(request):
             return redirect('index')
         else:
             return redirect('accounts:signup')
+        
+def login_view(request):
+    #GET, POST 분리
+    if request.method == "GET": # 로그인 HTML 응답
+        return render(request, 'accounts/login.html', {'form': AuthenticationForm()})
+    else:
+        form = AuthenticationForm(request, request.POST) # 데이터 유효성 검사
+        if form.is_valid():
+            login(request, form.user_cache) # 로그인 처리
+            return redirect('index')
+        else:
+            return render(request, 'accounts/login.html', {'form':form})
+
+def logout_view(request):
+    if request.user.is_authenticated:
+        logout(request)
+
+    return redirect('index')
