@@ -12,3 +12,12 @@ class Post(models.Model):
 
     def __str__(self):
         return f'{self.writer} - {self.created_at}'
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments', verbose_name='게시글')
+    content = models.TextField(verbose_name='내용')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='작성일')
+    writer = models.ForeignKey(to=User, on_delete=models.CASCADE, verbose_name='작성자', null=True, blank=True)
+
+    def __str__(self):
+        return f'{self.writer} - {self.content[:20]}'
